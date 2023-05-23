@@ -1,0 +1,45 @@
+{% extends 'base.html'%}
+
+{% block title%}
+Homepage
+{% endblock %}
+
+{% block flash%}
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<div class="container">
+    <ul class="">
+        {% for message in messages %}
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">{{ message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+{% endwith %}
+{% endblock %}
+
+{% block content %}
+<div class="container rounded">
+    <form action="/" method="POST" enctype="multipart/form-data" class="m-5">
+        {{form.hidden_tag()}}
+        <div class="text-center mb-3">
+            {{form.p_img.label(class="h1")}}
+        </div>
+        <div class="input-group">
+            {{form.p_img(class='form-control')}}
+            <!-- {{form.submit(class='btn btn-primary-secondary')}}-->
+        </div>
+        <div>
+            <!--{{form.p_img.label(class='h1')}}
+            <br>
+            {{form.p_img(class='a')}}-->
+        </div>
+        {{form.submit(class='btn btn-lg  btn-info mt-5')}}
+    </form>
+</div>
+
+{% endblock %}

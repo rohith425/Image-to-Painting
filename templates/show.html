@@ -1,0 +1,39 @@
+{% extends 'base.html'%}
+
+{% block title%}
+Images
+{% endblock %}
+
+{% block content%}
+
+<div class="container mt-4 pl-2">
+    <h1 class="text-center">Input Image</h1>
+        {% for i in range(leng) %}
+        <div class="container">
+            <div class="card-body" style="padding: 0px;">
+                <img src="{{inp[i]}}" alt="img">
+            </div>
+        </div>
+        {% endfor %}
+</div>
+
+<div class="container mt-4 pl-2 mb-2">
+    <h1 class="text-center">Images</h1>
+
+    <div class="container">
+        <div class="row">
+            {% for i in range(length) %}
+        
+                <div class="card-body" style="padding: 10px;">
+                    <img src="{{user_imgs[i]}}" alt="img">
+                </div>
+            {% endfor %} 
+        </div>
+    </div>
+
+
+</div>
+
+<br>
+
+{%endblock%}
